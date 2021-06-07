@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "43643810660",
+    "project_id": "datanewsanime-cfeb9",
+    "storage_bucket": "datanewsanime-cfeb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43643810660:android:fc8ecc2f71496d04b18071",
+        "android_client_info": {
+          "package_name": "com.example.datanewsanime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43643810660-u08i1n8g7qmnq1n3pioiqvcou2cm6jp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqLbk-yfDAMmrM6fMJ6t0lsvHGWOdjyjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43643810660-u08i1n8g7qmnq1n3pioiqvcou2cm6jp6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
