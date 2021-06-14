@@ -42,9 +42,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUser(edt_user.getText().toString(),edt_pass.getText().toString());
-                Intent intent = new Intent(Login.this,Home.class);
-                startActivity(intent);
-                finish();
+
             }
         });
 
@@ -71,6 +69,9 @@ public class Login extends AppCompatActivity {
                             Log.d("TAG", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(),"Login Ok",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Login.this,Home.class);
+                            startActivity(intent);
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithEmail:failure", task.getException());

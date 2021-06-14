@@ -1,10 +1,12 @@
 package com.example.datanewsanime;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.datanewsanime.handlexml.ConnectionAPIs;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -17,9 +19,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
+        Intent intent = new Intent(MainActivity.this,Login.class);
+        startActivity(intent);
+        finish();
+        /*
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null){
             Intent intent = new Intent(MainActivity.this,Login.class);
@@ -30,5 +37,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+        */
     }
+
+
 }
