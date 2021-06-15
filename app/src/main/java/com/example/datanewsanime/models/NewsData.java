@@ -1,11 +1,12 @@
-package com.example.datanewsanime.handlexml;
+package com.example.datanewsanime.models;
 
 public class NewsData {
-    String id;
+    //String id;
     String type;
     String name;
     String vintage;
 
+    /*
     public String getId() {
         return id;
     }
@@ -13,6 +14,7 @@ public class NewsData {
     public void setId(String id) {
         this.id = id;
     }
+    */
 
     public String getType() {
         return type;

@@ -1,5 +1,7 @@
 package com.example.datanewsanime.handlexml;
 
+import com.example.datanewsanime.models.NewsData;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -48,9 +50,11 @@ public class HandleXML {
                     case XmlPullParser.TEXT:
                         if (itemTag && nd != null){
                             switch (currentTag){
+                                /*
                                 case "id":
                                     nd.setId(xmlParser.getText());
                                 break;
+                                */
                                 case "type":
                                     nd.setType(xmlParser.getText());
                                     break;
@@ -69,14 +73,11 @@ public class HandleXML {
                 eventType = xmlParser.next();
             }
             return newsList;
-
-
         } catch (XmlPullParserException | IOException e) {
             e.printStackTrace();
             return null;
         }
     }
-
 
 
 

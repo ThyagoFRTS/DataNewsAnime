@@ -1,4 +1,4 @@
-package com.example.datanewsanime.handlexml;
+package com.example.datanewsanime.connectionapis;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,8 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ConnectionAPIs {
-
-
 
     public static String getData(String uri){
         BufferedReader br = null;
@@ -23,9 +21,7 @@ public class ConnectionAPIs {
             while ((line = br.readLine())!=null){
                 sb.append(line).append("\n");
             }
-
             return sb.toString();
-
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -39,4 +35,7 @@ public class ConnectionAPIs {
             }
         }
     }
+
+
+
 }

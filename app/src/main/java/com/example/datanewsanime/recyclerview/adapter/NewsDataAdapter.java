@@ -1,6 +1,5 @@
 package com.example.datanewsanime.recyclerview.adapter;
 
-import android.accounts.NetworkErrorException;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.datanewsanime.R;
-import com.example.datanewsanime.handlexml.NewsData;
+import com.example.datanewsanime.models.NewsData;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -21,6 +20,7 @@ import java.util.List;
 
 public class NewsDataAdapter extends RecyclerView.Adapter <NewsDataAdapter.ViewHolder> {
     private final Context context;
+    private final List<NewsData> feed = new ArrayList<>();
 
     public NewsDataAdapter(Context context) {
         this.context = context;
@@ -34,7 +34,6 @@ public class NewsDataAdapter extends RecyclerView.Adapter <NewsDataAdapter.ViewH
     }
 
 
-    private final List<NewsData> feed = new ArrayList<>();
     @NonNull
     @NotNull
     @Override
@@ -67,8 +66,6 @@ public class NewsDataAdapter extends RecyclerView.Adapter <NewsDataAdapter.ViewH
 
 
         }
-
-
 
         public void bind (NewsData newsData){
             this.newsData = newsData;

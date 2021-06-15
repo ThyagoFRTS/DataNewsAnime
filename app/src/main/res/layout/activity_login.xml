@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
     android:background="@color/appBackground"
     tools:context=".Login">
+
     <EditText
-        android:autofillHints="@string/email"
         android:id="@+id/userNameLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:padding="16dp"
-        android:layout_marginTop="208dp"
-        android:ems="10"
+        android:layout_marginTop="60dp"
+        android:autofillHints="@string/email"
         android:background="@drawable/edit_text_background"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
+        android:ems="10"
         android:hint="@string/email"
         android:inputType="textPersonName"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/passLogin"
@@ -51,7 +51,7 @@
         android:layout_marginLeft="104dp"
         android:layout_marginTop="52dp"
         android:text="@string/login"
-        android:background="@color/btn"
+        android:background="@drawable/button_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passLogin" />
 
@@ -63,7 +63,18 @@
         android:layout_marginLeft="104dp"
         android:layout_marginTop="36dp"
         android:text="@string/singin"
-        android:background="@color/btn"
+        android:background="@drawable/button_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:contentDescription="@string/app_name"
+        android:layout_width="142dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_sakura" />
 </androidx.constraintlayout.widget.ConstraintLayout>
