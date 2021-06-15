@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ConnectionAPIs {
-    String url_news = "https://www.animenewsnetwork.com/encyclopedia/reports.xml?id=155";
+
 
 
     public static String getData(String uri){
@@ -21,7 +21,7 @@ public class ConnectionAPIs {
             String line;
 
             while ((line = br.readLine())!=null){
-                sb.append(line+"\n");
+                sb.append(line).append("\n");
             }
 
             return sb.toString();

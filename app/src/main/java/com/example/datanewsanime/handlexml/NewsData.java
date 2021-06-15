@@ -1,16 +1,16 @@
 package com.example.datanewsanime.handlexml;
 
 public class NewsData {
-    Integer id;
+    String id;
     String type;
     String name;
-    String year;
+    String vintage;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -30,11 +30,11 @@ public class NewsData {
         this.name = name;
     }
 
-    public String getYear() {
-        return year;
+    public String getVintage() {
+        return vintage;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setVintage(String vintage) {
+        this.vintage = vintage;
     }
 }
