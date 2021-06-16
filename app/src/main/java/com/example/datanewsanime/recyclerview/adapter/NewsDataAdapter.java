@@ -1,6 +1,9 @@
 package com.example.datanewsanime.recyclerview.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,22 +14,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.datanewsanime.R;
-import com.example.datanewsanime.models.NewsData;
+import com.example.datanewsanime.models.MalNextSeason;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsDataAdapter extends RecyclerView.Adapter <NewsDataAdapter.ViewHolder> {
+public class NewsDataAdapter extends RecyclerView.Adapter<NewsDataAdapter.ViewHolder> {
     private final Context context;
-    private final List<NewsData> feed = new ArrayList<>();
+    private final List<MalNextSeason> feed = new ArrayList<>();
 
     public NewsDataAdapter(Context context) {
         this.context = context;
     }
 
-    public void refresh (List<NewsData> listNewsData){
+    public void refresh(List<MalNextSeason> listNewsData) {
         notifyItemRangeRemoved(0, this.feed.size());
         this.feed.clear();
         this.feed.addAll(listNewsData);
@@ -45,7 +50,7 @@ public class NewsDataAdapter extends RecyclerView.Adapter <NewsDataAdapter.ViewH
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
-        NewsData newsData = feed.get(position);
+        MalNextSeason newsData = feed.get(position);
         holder.bind(newsData);
     }
 
@@ -54,22 +59,58 @@ public class NewsDataAdapter extends RecyclerView.Adapter <NewsDataAdapter.ViewH
         return feed.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView title;
         private final ImageView image;
-        private NewsData newsData;
+        private final TextView preview;
+        private final TextView type;
+        private MalNextSeason newsData;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.item_news_data_title);
             image = itemView.findViewById(R.id.item_news_data_image);
-
+            preview = itemView.findViewById(R.id.item_news_data_preview);
+            type = itemView.findViewById(R.id.item_news_data_type);
 
         }
 
-        public void bind (NewsData newsData){
+        public void bind(MalNextSeason newsData) {
             this.newsData = newsData;
-            title.setText(newsData.getName());
+            title.setText(newsData.getTitle());
+            type.setText(newsData.getType());
+            preview.setText(newsData.getSynopsis());
+            LoadImage lm = new LoadImage(image);
+            lm.execute(newsData.getImageUrl());
+
+        }
+
+        private static class LoadImage extends AsyncTask<String, Void, Bitmap> {
+            ImageView iv;
+
+            public LoadImage(ImageView iv) {
+                this.iv = iv;
+            }
+
+            @Override
+            protected Bitmap doInBackground(String... strings) {
+                String urlLink = strings[0];
+                Bitmap bitmap = null;
+                try {
+                    InputStream is = new URL(urlLink).openStream();
+                    bitmap = BitmapFactory.decodeStream(is);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return bitmap;
+            }
+
+            @Override
+            protected void onPostExecute(Bitmap bitmap) {
+                iv.setImageBitmap(bitmap);
+
+            }
         }
     }
+
 }

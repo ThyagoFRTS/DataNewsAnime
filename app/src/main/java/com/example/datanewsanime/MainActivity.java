@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -18,10 +21,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        /*
         Intent intent = new Intent(MainActivity.this,Login.class);
         startActivity(intent);
         finish();
-        /*
+        */
+
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null){
             Intent intent = new Intent(MainActivity.this,Login.class);
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        */
+
     }
 
 

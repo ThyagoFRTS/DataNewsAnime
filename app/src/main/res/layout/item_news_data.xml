@@ -1,43 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-<androidx.cardview.widget.CardView
-    android:layout_marginBottom="20dp"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBaseline_toBaselineOf="parent">
-    <LinearLayout
+    android:background="@color/appBackground">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:padding="20dp">
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp">
-            <ImageView
-                android:id="@+id/item_news_data_image"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:src="@drawable/kanasan"
-                android:scaleType="centerCrop"/>
-        </androidx.cardview.widget.CardView>
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/item_news_data_title"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Title AAAAA"
-            android:textSize="25sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            />
+            android:paddingBottom="4dp"
+            android:background="@drawable/recycler_view_backgroung"
+            android:padding="20dp">
 
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/item_news_data_image"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/card_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/kanasan" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_news_data_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:maxLines="2"
+                    android:textColor="@color/gray"
+                    android:textSize="20sp"
+                    tools:text="Title AAAAAa a a a a aaaaa aa aaaaaaaa a a a a a a aaaa" />
+
+                <TextView
+                    android:id="@+id/item_news_data_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:maxLength="70"
+                    android:maxLines="2"
+                    android:text="TextView"
+                    android:textColor="@color/gray" />
+
+                <TextView
+                    android:id="@+id/item_news_data_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:maxLength="70"
+                    android:maxLines="2"
+                    android:text="TextView"
+                    android:textColor="@color/gray" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

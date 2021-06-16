@@ -2,9 +2,13 @@ package com.example.datanewsanime.handlejson;
 
 import com.example.datanewsanime.models.MalInfoAnime;
 import com.example.datanewsanime.models.MalNews;
+import com.example.datanewsanime.models.MalNextSeason;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HandleJSON {
     String searchAnimeTitleId = "https://api.jikan.moe/v3/anime/";
@@ -41,7 +45,7 @@ public class HandleJSON {
         }
     }
 
-    public static MalNews getMalINews(String content){
+    public static MalNews getMalNews(String content){
         try {
             JSONArray ja;
             JSONObject jo;
@@ -57,8 +61,59 @@ public class HandleJSON {
             mn.setImageUrl(jo.getString("image_url"));
             mn.setIntro(jo.getString("intro"));
 
-
             return mn;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static List<MalNextSeason> getMalNextSeason(String content){
+        try {
+            JSONArray ja;
+            JSONArray jaNames;
+            JSONObject jo;
+            JSONObject joNames;
+
+            List<MalNextSeason> animes = new ArrayList<>();
+            List<String> names;
+            MalNextSeason mns;
+
+            jo = new JSONObject(content);
+            ja = jo.getJSONArray("anime");
+
+            for (int i = 0; i < ja.length(); i++){
+                jo = ja.getJSONObject(i);
+                mns = new MalNextSeason();
+
+                mns.setMalId(jo.getString("mal_id"));
+                mns.setTitle(jo.getString("title"));
+                mns.setImageUrl(jo.getString("image_url"));
+                mns.setSynopsis(jo.getString("synopsis"));
+                mns.setType(jo.getString("type"));
+                mns.setMembers(jo.getString("members"));
+                mns.setSource(jo.getString("source"));
+
+                jaNames = jo.getJSONArray("genres");
+                names = new ArrayList<>();
+                for (int j = 0; j < jaNames.length(); j++){
+                    joNames = jaNames.getJSONObject(j);
+                    names.add(joNames.getString("name"));
+                }
+                mns.setGenres(names);
+
+                jaNames = jo.getJSONArray("producers");
+                names = new ArrayList<>();
+                for (int j = 0; j < jaNames.length(); j++){
+                    joNames = jaNames.getJSONObject(j);
+                    names.add(joNames.getString("name"));
+                }
+                mns.setProducers(names);
+
+                animes.add(mns);
+            }
+
+            return animes;
         }catch (Exception e){
             e.printStackTrace();
             return null;
