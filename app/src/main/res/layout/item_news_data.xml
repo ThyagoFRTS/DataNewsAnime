@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
+            android:layout_margin="10dp"
             android:background="@drawable/recycler_view_backgroung"
             android:padding="20dp">
 
@@ -32,8 +32,7 @@
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:contentDescription="@string/card_image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/kanasan" />
+                    android:scaleType="centerCrop" />
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
