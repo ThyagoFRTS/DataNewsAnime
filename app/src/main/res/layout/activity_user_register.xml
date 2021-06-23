@@ -7,26 +7,56 @@
     android:background="@color/appBackground"
     tools:context=".UserRegister">
 
+    <ImageView
+        android:id="@+id/imageViewRegister"
+        android:contentDescription="@string/app_name"
+        android:layout_width="142dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_sakura" />
+
     <EditText
+        android:id="@+id/userNameRegister"
+        android:layout_width="382dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="60dp"
         android:autofillHints="@string/email"
-        android:id="@+id/userNameLogin"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/user"
+        android:inputType="textPersonName"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewRegister" />
+
+    <EditText
+        android:id="@+id/emailLogin"
         android:layout_width="382dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="28dp"
+        android:autofillHints="@string/email"
+        android:background="@drawable/edit_text_background"
         android:ems="10"
-        android:background="#FFF"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
         android:hint="@string/email"
         android:inputType="textPersonName"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/userNameRegister" />
 
     <EditText
         android:autofillHints="@string/pass"
+        android:padding="16dp"
         android:id="@+id/passLogin"
         android:layout_width="378dp"
         android:layout_height="56dp"
@@ -34,13 +64,13 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:background="#FFF"
+        android:background="@drawable/edit_text_background"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
         android:hint="@string/pass"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/emailLogin" />
 
 
     <EditText
@@ -51,7 +81,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="28dp"
         android:autofillHints="@string/pass"
-        android:background="#FFF"
+        android:padding="16dp"
+        android:background="@drawable/edit_text_background"
         android:ems="10"
         android:hint="@string/confpass"
         android:inputType="textPassword"
@@ -67,7 +98,7 @@
         android:layout_marginStart="104dp"
         android:layout_marginLeft="104dp"
         android:layout_marginTop="60dp"
-        android:background="@color/btn"
+        android:background="@drawable/button_background"
         android:text="@string/singin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPass" />

@@ -7,6 +7,8 @@
     android:background="@color/appBackground">
 
     <androidx.cardview.widget.CardView
+        android:clickable="true"
+        android:id="@+id/card_preview_next_season"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
