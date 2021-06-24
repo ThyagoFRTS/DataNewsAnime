@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class UserRegister extends AppCompatActivity {
-    private Button btn_register;
     private EditText userName;
     private EditText email;
     private EditText pass;
@@ -27,7 +26,7 @@ public class UserRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_register);
-        btn_register = findViewById(R.id.singIn);
+        Button btn_register = findViewById(R.id.singIn);
         userName = findViewById(R.id.userNameRegister);
         email = findViewById(R.id.emailLogin);
         pass = findViewById(R.id.passLogin);

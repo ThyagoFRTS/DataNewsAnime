@@ -88,7 +88,7 @@ public class NewsDataAdapter extends RecyclerView.Adapter<NewsDataAdapter.ViewHo
         public void bind(MalNextSeason malNextSeason) {
             this.malNextSeason = malNextSeason;
             title.setText(malNextSeason.getTitle());
-            type.setText(malNextSeason.getMalId());
+            type.setText(malNextSeason.getType());
             preview.setText(malNextSeason.getSynopsis());
 
             if (malNextSeason.getImageUrl() != ""){

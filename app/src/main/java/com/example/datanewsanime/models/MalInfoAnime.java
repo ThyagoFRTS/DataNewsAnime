@@ -12,6 +12,22 @@ public class MalInfoAnime {
     String startDate;
     String endDate;
 
+    @Override
+    public String toString() {
+        return "MalInfoAnime{" +
+                "malId='" + malId + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", title='" + title + '\'' +
+                ", airing=" + airing +
+                ", type='" + type + '\'' +
+                ", synopsis='" + synopsis + '\'' +
+                ", episodes='" + episodes + '\'' +
+                ", score='" + score + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                '}';
+    }
+
     public String getMalId() {
         return malId;
     }

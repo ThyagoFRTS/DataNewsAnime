@@ -11,10 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HandleJSON {
-    String searchAnimeTitleId = "https://api.jikan.moe/v3/anime/";
-    String searchMangaTitleId = "https://api.jikan.moe/v3/manga/";
-    String searchAnimeTitle = "https://api.jikan.moe/v3/search/anime?q=";
-    String searchMangaTitle = "https://api.jikan.moe/v3/search/manga?q=";
+
+
 
 
 
@@ -23,6 +21,7 @@ public class HandleJSON {
             JSONArray ja;
             JSONObject jo;
             MalInfoAnime iam = new MalInfoAnime();
+
 
             jo = new JSONObject(content);
             ja = jo.getJSONArray("results");
@@ -50,6 +49,8 @@ public class HandleJSON {
             JSONArray ja;
             JSONObject jo;
             MalNews mn = new MalNews();
+            System.out.println("-----IN HANDLE-----");
+            System.out.println(content);
 
             jo = new JSONObject(content);
             ja = jo.getJSONArray("articles");
