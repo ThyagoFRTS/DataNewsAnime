@@ -1,8 +1,9 @@
 package com.example.datanewsanime.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class MalNextSeason {
+public class MalNextSeason implements Serializable {
     String malId;
     String title;
     String imageUrl;

@@ -1,5 +1,8 @@
 package com.example.datanewsanime.models;
 
+import com.example.datanewsanime.settings.SettingsDatabase;
+import com.google.firebase.database.DatabaseReference;
+
 public class User {
     private String id;
     private String userName;
@@ -53,5 +56,10 @@ public class User {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public void saveData() {
+        DatabaseReference firebase = SettingsDatabase.getFirebaseDatabase();
+        firebase.child("Users").child(this.id).setValue(this);
     }
 }

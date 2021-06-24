@@ -5,8 +5,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.datanewsanime.connectionapis.ConnectionAPIs;
@@ -27,6 +29,8 @@ public class Home extends AppCompatActivity {
     private MalNews mn;
     private TextView tv;
     private CardView cv;
+    private RecyclerView recyclerView;
+
     String url_news = "https://www.animenewsnetwork.com/encyclopedia/reports.xml?id=155&nlist=10";
     String url_info_anime = "https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=10906";
 
@@ -40,14 +44,26 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        cv = findViewById(R.id.card_preview_next_season);
+        //cv = findViewById(R.id.card_preview_next_season);
+
 
         RecyclerView feedNewsRecyclerView = findViewById(R.id.activity_home_recyclerview);
         adapter = new NewsDataAdapter(this);
         feedNewsRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new NewsDataAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(MalNextSeason malNextSeason) {
+                Intent intent = new Intent(Home.this, NewsContent.class);
+                intent.putExtra("content_malNextSeason",malNextSeason);
+                startActivity(intent);
+
+            }
+        });
 
         TaskConnection task = new TaskConnection();
         task.execute(animesSeasonLaterUrl);
+
+
 
         
 

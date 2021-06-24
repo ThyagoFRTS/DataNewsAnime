@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_sakura_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DataNewsAnime">
-        <activity android:name=".Profile"></activity>
-        <activity android:name=".Home"></activity>
+        <activity android:name=".NewsContent"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".Home" />
         <activity android:name=".UserRegister" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">

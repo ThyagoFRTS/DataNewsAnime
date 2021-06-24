@@ -38,21 +38,19 @@ public class Login extends AppCompatActivity {
         edt_user = findViewById(R.id.userNameLogin);
         edt_pass = findViewById(R.id.passLogin);
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginUser(edt_user.getText().toString(),edt_pass.getText().toString());
-
+        btn_login.setOnClickListener(v -> {
+            if (edt_user.getText().toString().equals("") || edt_pass.getText().toString().equals("")) {
+                Toast.makeText(getApplicationContext(), "Authentication failed.",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                loginUser(edt_user.getText().toString(), edt_pass.getText().toString());
             }
         });
 
-        btn_singin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this,UserRegister.class);
-                startActivity(intent);
-                finish();
-            }
+        btn_singin.setOnClickListener(v -> {
+            Intent intent = new Intent(Login.this,UserRegister.class);
+            startActivity(intent);
+            finish();
         });
 
 

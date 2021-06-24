@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.datanewsanime.R;
 import com.example.datanewsanime.models.MalNextSeason;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -26,6 +27,11 @@ import java.util.List;
 public class NewsDataAdapter extends RecyclerView.Adapter<NewsDataAdapter.ViewHolder> {
     private final Context context;
     private final List<MalNextSeason> feed = new ArrayList<>();
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener (OnItemClickListener listener){
+        this.onItemClickListener = listener;
+    }
 
     public NewsDataAdapter(Context context) {
         this.context = context;
@@ -59,12 +65,12 @@ public class NewsDataAdapter extends RecyclerView.Adapter<NewsDataAdapter.ViewHo
         return feed.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView title;
         private final ImageView image;
         private final TextView preview;
         private final TextView type;
-        private MalNextSeason newsData;
+        private MalNextSeason malNextSeason;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
@@ -72,45 +78,29 @@ public class NewsDataAdapter extends RecyclerView.Adapter<NewsDataAdapter.ViewHo
             image = itemView.findViewById(R.id.item_news_data_image);
             preview = itemView.findViewById(R.id.item_news_data_preview);
             type = itemView.findViewById(R.id.item_news_data_type);
-
-        }
-
-        public void bind(MalNextSeason newsData) {
-            this.newsData = newsData;
-            title.setText(newsData.getTitle());
-            type.setText(newsData.getMalId());
-            preview.setText(newsData.getSynopsis());
-            LoadImage lm = new LoadImage(image);
-            lm.execute(newsData.getImageUrl());
-
-        }
-
-        private static class LoadImage extends AsyncTask<String, Void, Bitmap> {
-            ImageView iv;
-
-            public LoadImage(ImageView iv) {
-                this.iv = iv;
-            }
-
-            @Override
-            protected Bitmap doInBackground(String... strings) {
-                String urlLink = strings[0];
-                Bitmap bitmap = null;
-                try {
-                    InputStream is = new URL(urlLink).openStream();
-                    bitmap = BitmapFactory.decodeStream(is);
-                } catch (Exception e) {
-                    e.printStackTrace();
+            itemView.setOnClickListener(v ->{
+                if (malNextSeason !=null){
+                    onItemClickListener.onItemClick(malNextSeason);
                 }
-                return bitmap;
-            }
+            });
+        }
 
-            @Override
-            protected void onPostExecute(Bitmap bitmap) {
-                iv.setImageBitmap(bitmap);
+        public void bind(MalNextSeason malNextSeason) {
+            this.malNextSeason = malNextSeason;
+            title.setText(malNextSeason.getTitle());
+            type.setText(malNextSeason.getMalId());
+            preview.setText(malNextSeason.getSynopsis());
 
+            if (malNextSeason.getImageUrl() != ""){
+                Picasso.get().load(malNextSeason.getImageUrl()).into(image);
             }
         }
+
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(MalNextSeason malNextSeason);
+
     }
 
 }

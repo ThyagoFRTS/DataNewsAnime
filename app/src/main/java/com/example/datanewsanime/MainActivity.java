@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        Intent intent = new Intent(MainActivity.this,Login.class);
+        Intent intent = new Intent(MainActivity.this,Home.class);
         startActivity(intent);
         finish();
 

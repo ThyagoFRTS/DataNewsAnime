@@ -37,8 +37,7 @@ public class UserRegister extends AppCompatActivity {
 
         btn_register.setOnClickListener(v -> {
             if (getData()){
-                FirebaseUser currentUser =  userAuth.getCurrentUser();
-                user.setId(currentUser.getUid());
+
                 makeAutentication();
             }
 
@@ -49,6 +48,9 @@ public class UserRegister extends AppCompatActivity {
         userAuth.createUserWithEmailAndPassword(user.getEmail(),user.getPass())
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()){
+                        FirebaseUser currentUser =  userAuth.getCurrentUser();
+                        user.setId(currentUser.getUid());
+                        user.saveData();
                         startActivity(new Intent(getApplicationContext(), Home.class));
                     }else{
                         Toast.makeText(UserRegister.this,"Autentication Error",Toast.LENGTH_SHORT).show();
