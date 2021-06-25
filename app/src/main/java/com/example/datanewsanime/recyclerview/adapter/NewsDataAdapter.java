@@ -1,9 +1,6 @@
 package com.example.datanewsanime.recyclerview.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +16,6 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +44,7 @@ public class NewsDataAdapter extends RecyclerView.Adapter<NewsDataAdapter.ViewHo
     @NotNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View createdView = LayoutInflater.from(context)
+        View createdView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_news_data, parent, false);
         return new ViewHolder(createdView);
     }

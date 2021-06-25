@@ -1,32 +1,44 @@
-package com.example.datanewsanime;
+package com.example.datanewsanime.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentContainerView;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.datanewsanime.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
+
+    private BottomNavigationView bottomNavigationView;
+    private FragmentContainerView fragmentContainerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+
+
+
+        
+
     }
 
 
+
+
+        /*
     @Override
     protected void onStart() {
         super.onStart();
 
-        Intent intent = new Intent(MainActivity.this,Home.class);
+        Intent intent = new Intent(MainActivity.this, Home.class);
         startActivity(intent);
         finish();
 
-        /*
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null){
             Intent intent = new Intent(MainActivity.this,Login.class);
@@ -37,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        */
     }
+        */
 
 
 }

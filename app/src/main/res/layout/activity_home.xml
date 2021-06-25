@@ -5,25 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appBackground"
-    tools:context=".Home">
-
-
-
+    tools:context=".fragments.Home">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/activity_home_recyclerview"
-        android:layout_marginTop="150dp"
-        android:layout_width="0dp"
-        android:padding="8dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/recycler_view_backgroung"
+        android:layout_width="395dp"
+        android:layout_height="571dp"
 
+        android:background="@drawable/recycler_view_backgroung"
+        android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_news_data" />
+        tools:listitem="@layout/item_news_data">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 

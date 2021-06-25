@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.datanewsanime.fragments.Home"
+        android:label="next season list"
+        tools:layout="@layout/activity_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newsContentFragment"
+            app:destination="@id/newsContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsContentFragment"
+        android:name="com.example.datanewsanime.fragments.NewsContent"
+        android:label="Handle Info Card"
+        tools:layout="@layout/activity_news_content" >
+        <argument
+            android:name="idMAL"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.datanewsanime.fragments.Profile"
+        android:label="profile"
+        tools:layout="@layout/activity_profile" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.datanewsanime.fragments.Login"
+        android:label="login"
+        tools:layout="@layout/activity_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_userRegisterFragment"
+            app:destination="@id/userRegisterFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userRegisterFragment"
+        android:name="com.example.datanewsanime.fragments.UserRegister"
+        android:label="register users"
+        tools:layout="@layout/activity_user_register" />
+    <action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment" />
+</navigation>

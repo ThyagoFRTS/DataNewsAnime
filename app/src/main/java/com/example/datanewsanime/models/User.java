@@ -61,5 +61,6 @@ public class User {
     public void saveData() {
         DatabaseReference firebase = SettingsDatabase.getFirebaseDatabase();
         firebase.child("Users").child(this.id).setValue(this);
+
     }
 }
