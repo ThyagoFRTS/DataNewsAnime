@@ -1,5 +1,6 @@
 package com.example.datanewsanime.fragments;
 
+import androidx.activity.result.ActivityResultCaller;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Profile extends Fragment {
+public class ProfileFragment extends Fragment {
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -32,6 +33,14 @@ public class Profile extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView userName = getActivity().findViewById(R.id.profile_username);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference data = FirebaseDatabase.getInstance().getReference();
+        if (user != null) {
+            System.out.println("-----------------------------------------");
+            user.getUid();
+            System.out.println(FirebaseDatabase.getInstance().getReference().child("Users").child("CQlGTTZyYtMAWW5Ifm8a28ipzBC2").child("userName").getRef());
+        }
 
 
     }
@@ -42,14 +51,12 @@ public class Profile extends Fragment {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         TextView userName = findViewById(R.id.profile_username);
-
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference data = FirebaseDatabase.getInstance().getReference();
         if (user != null) {
             System.out.println("-----------------------------------------");
             user.getUid();
             System.out.println(FirebaseDatabase.getInstance().getReference().child("Users").child("CQlGTTZyYtMAWW5Ifm8a28ipzBC2").child("userName").getRef());
-
         }
     }*/
 }

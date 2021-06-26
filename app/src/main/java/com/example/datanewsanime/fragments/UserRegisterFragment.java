@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 import org.jetbrains.annotations.NotNull;
 
 
-public class UserRegister extends Fragment {
+public class UserRegisterFragment extends Fragment {
     private EditText userName;
     private EditText email;
     private EditText pass;
@@ -64,7 +64,6 @@ public class UserRegister extends Fragment {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
     private void makeAutentication() {
         userAuth.createUserWithEmailAndPassword(user.getEmail(),user.getPass())
                 .addOnCompleteListener(this, task -> {

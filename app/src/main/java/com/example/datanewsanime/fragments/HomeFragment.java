@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends Fragment {
+public class HomeFragment extends Fragment {
     private List<MalNextSeason> dataFeed = new ArrayList<>();
     private NewsDataAdapter adapter;
 
@@ -60,14 +60,11 @@ public class Home extends Fragment {
 
     }
     /**
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-
-
-    }*/
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+     super.onCreate(savedInstanceState);
+     setContentView(R.layout.activity_home);
+     }*/
 
     @SuppressLint("StaticFieldLeak")
     private class TaskConnection extends AsyncTask<String,String,String> {

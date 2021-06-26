@@ -7,17 +7,6 @@ public class MalNews {
     String imageUrl;
     String intro;
 
-    @Override
-    public String toString() {
-        return "MalNews{" +
-                "title='" + title + '\'' +
-                ", date='" + date + '\'' +
-                ", authorUrl='" + authorUrl + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", intro='" + intro + '\'' +
-                '}';
-    }
-
     public String getTitle() {
         return title;
     }

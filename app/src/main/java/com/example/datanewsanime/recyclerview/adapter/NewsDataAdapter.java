@@ -86,7 +86,7 @@ public class NewsDataAdapter extends RecyclerView.Adapter<NewsDataAdapter.ViewHo
             type.setText(malNextSeason.getType());
             preview.setText(malNextSeason.getSynopsis());
 
-            if (malNextSeason.getImageUrl() != ""){
+            if (!malNextSeason.getImageUrl().equals("")){
                 Picasso.get().load(malNextSeason.getImageUrl()).into(image);
             }
         }

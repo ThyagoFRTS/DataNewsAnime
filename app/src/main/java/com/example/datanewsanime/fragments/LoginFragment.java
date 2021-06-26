@@ -2,10 +2,8 @@ package com.example.datanewsanime.fragments;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.datanewsanime.R;
-import com.example.datanewsanime.activities.MainActivity2;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -24,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.Executor;
 
-public class Login extends Fragment {
+public class LoginFragment extends Fragment {
     private EditText edt_user;
     private EditText edt_pass;
     //Firebase
@@ -59,22 +56,18 @@ public class Login extends Fragment {
 
         btn_singin.setOnClickListener(v -> {
             /**
-            Intent intent = new Intent(Login.this, UserRegister.class);
-            startActivity(intent);
-            finish();
+             Intent intent = new Intent(Login.this, UserRegister.class);
+             startActivity(intent);
+             finish();
              */
         });
     }
     /**
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-
-
-
-    }*/
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+     super.onCreate(savedInstanceState);
+     setContentView(R.layout.activity_login);
+     }*/
 
     //class funcions
 
@@ -89,9 +82,9 @@ public class Login extends Fragment {
                         FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(getActivity().getApplicationContext(),"Login Ok",Toast.LENGTH_SHORT).show();
                         /**
-                        Intent intent = new Intent(Login.this, MainActivity2.class);
-                        startActivity(intent);
-                        finish();
+                         Intent intent = new Intent(Login.this, MainActivity2.class);
+                         startActivity(intent);
+                         finish();
                          */
                     } else {
                         // If sign in fails, display a message to the user.

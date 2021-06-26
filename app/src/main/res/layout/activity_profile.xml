@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appBackground"
-    tools:context=".fragments.Profile">
+    tools:context=".activities.Profile">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -32,22 +32,61 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:text="TextView"
+            tools:text="TextView"
             android:textColor="@color/black" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="470dp"
+        android:id="@+id/profile_linear_layout_info_user"
+        android:layout_width="390dp"
+        android:layout_height="241dp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/edit_text_background"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintBottom_toTopOf="@+id/profile_button_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
+        <TextView
+            android:id="@+id/profile_email_ueser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:textColor="@color/gray"
+            tools:text="TextView" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/profile_button_logout"
+        android:layout_width="197dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="128dp"
+        android:background="@drawable/button_warning_background"
+        android:text="@string/logout"
+        app:layout_constraintBottom_toTopOf="@+id/profile_bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/profile_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_main_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

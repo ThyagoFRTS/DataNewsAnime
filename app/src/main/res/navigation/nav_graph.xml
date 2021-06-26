@@ -3,19 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/homeFragment4">
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.datanewsanime.fragments.Home"
+        android:id="@+id/homeFragment4"
+        android:name="com.example.datanewsanime.fragments.HomeFragment"
         android:label="next season list"
         tools:layout="@layout/activity_home" >
         <action
             android:id="@+id/action_homeFragment_to_newsContentFragment"
-            app:destination="@id/newsContentFragment" />
+            app:destination="@id/newsContentFragment4" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment4" />
+        <action
+            android:id="@+id/action_homeFragment4_self"
+            app:destination="@id/homeFragment4" />
     </fragment>
     <fragment
-        android:id="@+id/newsContentFragment"
-        android:name="com.example.datanewsanime.fragments.NewsContent"
+        android:id="@+id/newsContentFragment4"
+        android:name="com.example.datanewsanime.fragments.NewsContentFragment"
         android:label="Handle Info Card"
         tools:layout="@layout/activity_news_content" >
         <argument
@@ -23,26 +29,36 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.datanewsanime.fragments.Profile"
+        android:id="@+id/profileFragment4"
+        android:name="com.example.datanewsanime.activities.Profile"
         android:label="profile"
-        tools:layout="@layout/activity_profile" />
+        tools:layout="@layout/activity_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment4" />
+        <action
+            android:id="@+id/action_profileFragment4_self"
+            app:destination="@id/profileFragment4" />
+    </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.datanewsanime.fragments.Login"
+        android:id="@+id/loginFragment4"
+        android:name="com.example.datanewsanime.fragments.LoginFragment"
         android:label="login"
         tools:layout="@layout/activity_login" >
         <action
             android:id="@+id/action_loginFragment_to_userRegisterFragment"
-            app:destination="@id/userRegisterFragment" />
+            app:destination="@id/userRegisterFragment4" />
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment4" />
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment4" />
     </fragment>
     <fragment
-        android:id="@+id/userRegisterFragment"
-        android:name="com.example.datanewsanime.fragments.UserRegister"
+        android:id="@+id/userRegisterFragment4"
+        android:name="com.example.datanewsanime.fragments.UserRegisterFragment"
         android:label="register users"
         tools:layout="@layout/activity_user_register" />
-    <action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment" />
+    <action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment4" />
 </navigation>

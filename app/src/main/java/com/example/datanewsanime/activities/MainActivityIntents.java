@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentContainerView;
 import com.example.datanewsanime.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivityIntents extends AppCompatActivity {
 
 
     private BottomNavigationView bottomNavigationView;
