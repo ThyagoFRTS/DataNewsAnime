@@ -2,11 +2,14 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_selected="true"
-        android:state_active="true"
-        android:drawable="@color/appBackground"/>
+        android:drawable="@drawable/googleg_disabled_color_18"
+        android:state_active="false"/>
+
     <item
         android:state_selected="false"
-        android:state_active="false"
-        android:drawable="@color/appBackground"/>
+
+
+        android:state_active="false"/>
+
 
 </selector>

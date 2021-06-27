@@ -9,7 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
+import android.widget.SearchView;
 
 
 import com.example.datanewsanime.R;
@@ -36,6 +36,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         BottomNavigationView bottomNavigationView = findViewById(R.id.home_bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.menu_home);
+        SearchView searchView = findViewById(R.id.home_search_view);
 
         RecyclerView feedNewsRecyclerView = findViewById(R.id.activity_home_recyclerview);
         adapter = new NewsDataAdapter(this);
@@ -58,12 +59,27 @@ public class Home extends AppCompatActivity {
                 case R.id.menu_profile:
                     startActivity(new Intent(getApplicationContext(), Profile.class));
                     overridePendingTransition(0,0);
+                    finish();
 
                     return true;
             }
             return false;
         });
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent = new Intent(Home.this, SearchResults.class);
+                intent.putExtra("query_anime_tilte",query);
+                startActivity(intent);
+                finish();
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
         
 
 

@@ -16,7 +16,8 @@
         app:cardCornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp">
 
         <ImageView
             android:id="@+id/item_news_data_image"
@@ -39,7 +40,9 @@
         app:layout_constraintStart_toEndOf="@id/item_news_data_image_cardview"
         app:layout_constraintTop_toTopOf="@id/item_news_data_image_cardview"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Title AAAAAa a a a a aaaaa aa aaaaaaaa a a a a a a aaaa" />
+        tools:text="Title AAAAAa a a a a aaaaa aa aaaaaaaa a a a a a a aaaa"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/item_news_data_preview"
@@ -48,7 +51,7 @@
         android:layout_marginTop="5dp"
         android:maxLength="70"
         android:maxLines="2"
-        android:text="TextView"
+        android:text="@string/anime_syn"
         app:layout_constraintEnd_toEndOf="@id/item_news_data_title"
         app:layout_constraintStart_toStartOf="@id/item_news_data_title"
         app:layout_constraintTop_toBottomOf="@id/item_news_data_title"
@@ -61,7 +64,7 @@
         android:layout_marginTop="5dp"
         android:maxLength="70"
         android:maxLines="2"
-        android:text="TextView"
+        android:text="@string/anime_type"
         app:layout_constraintTop_toBottomOf="@id/item_news_data_preview"
         app:layout_constraintStart_toStartOf="@id/item_news_data_preview"
         app:layout_constraintEnd_toEndOf="@id/item_news_data_preview"

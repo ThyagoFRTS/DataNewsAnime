@@ -11,11 +11,12 @@
         android:roundIcon="@mipmap/ic_sakura_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activities.MainActivityIntents"/>
-        <activity android:name=".activities.Profile"/>
-        <activity android:name=".activities.Home"/>
-        <activity android:name=".activities.NewsContent"/>
-        <activity android:name=".activities.UserRegister"/>
+        <activity android:name=".activities.SearchResults"></activity>
+        <activity android:name=".activities.MainActivityIntents" />
+        <activity android:name=".activities.Profile" />
+        <activity android:name=".activities.Home" />
+        <activity android:name=".activities.NewsContent" />
+        <activity android:name=".activities.UserRegister" />
         <activity android:name=".activities.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -8,7 +8,7 @@
     tools:context=".fragments.LoginFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/appBackground"
         tools:context=".fragments.LoginFragment">
         <EditText
@@ -51,11 +51,10 @@
             android:id="@+id/login"
             android:layout_width="197dp"
             android:layout_height="52dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginLeft="104dp"
             android:layout_marginTop="52dp"
-            android:text="@string/login"
             android:background="@drawable/button_background"
+            android:text="@string/login"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passLogin" />
 
@@ -63,11 +62,10 @@
             android:id="@+id/singIn"
             android:layout_width="196dp"
             android:layout_height="47dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginLeft="104dp"
             android:layout_marginTop="36dp"
-            android:text="@string/singin"
             android:background="@drawable/button_background"
+            android:text="@string/singin"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/login" />
 

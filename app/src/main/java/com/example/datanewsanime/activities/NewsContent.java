@@ -27,8 +27,8 @@ public class NewsContent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_content);
-        boolean hasExtra = getIntent().hasExtra("content_malNextSeason");
-        if (hasExtra){
+        boolean hasExtraFromRecyclerView = getIntent().hasExtra("content_malNextSeason");
+        if (hasExtraFromRecyclerView){
             MalNextSeason malNextSeason = (MalNextSeason) getIntent().getSerializableExtra("content_malNextSeason");
             setFieldsNewsContent(malNextSeason);
             NewsContent.TaskMalConnection task = new NewsContent.TaskMalConnection();
@@ -36,7 +36,19 @@ public class NewsContent extends AppCompatActivity {
             NewsContent.TaskMalNewsConnection taskNews = new NewsContent.TaskMalNewsConnection();
             taskNews.execute(searchAnimeTitleId+malNextSeason.getMalId()+"/news");
         }
+        boolean hasExtraFromSearchView = getIntent().hasExtra("query_anime_tilte");
+        if (hasExtraFromSearchView){
 
+            System.out.println(getIntent().getSerializableExtra("query_anime_tilte").toString());
+            String title = getIntent().getSerializableExtra("query_anime_tilte").toString();
+            NewsContent.TaskMalConnection task = new NewsContent.TaskMalConnection();
+            task.execute(searchAnimeTitle+title);
+
+
+
+
+
+        }
     }
 
 
@@ -62,6 +74,8 @@ public class NewsContent extends AppCompatActivity {
         protected void onPostExecute(String s) {
             mia = HandleJSON.getMalInfoAnime(s);
             setFieldsMalInfoAnime();
+
+
 
         }
 
@@ -117,6 +131,7 @@ public class NewsContent extends AppCompatActivity {
             news_content_news_tittle.setText(String.format("Last News:\n%s", malNews.getTitle()));
             news_content_news_preview.setText(malNews.getIntro());
             news_content_news_date.setText(String.format("Published at: %s", malNews.getDate()));
+
 
         }
 

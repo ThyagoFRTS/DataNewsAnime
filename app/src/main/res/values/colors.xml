@@ -10,5 +10,5 @@
     <color name="gray">#777</color>
     <color name="btn">#C4F0FA</color>
     <color name="appBackground">#6B3D6C</color>
-    <color name="btn_warning">#F44336</color>
+    <color name="btn_warning">#FF6347</color>
 </resources>

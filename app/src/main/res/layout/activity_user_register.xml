@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/imageViewRegister"
             android:contentDescription="@string/app_name"
@@ -55,7 +55,8 @@
             android:textColor="@color/black"
             android:textColorHint="@color/gray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userNameRegister" />
+            app:layout_constraintTop_toBottomOf="@+id/userNameRegister"
+            tools:ignore="TextFields" />
 
         <EditText
             android:autofillHints="@string/pass"

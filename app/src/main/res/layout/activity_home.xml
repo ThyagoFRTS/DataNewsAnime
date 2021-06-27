@@ -7,17 +7,19 @@
     android:background="@color/appBackground"
     tools:context=".activities.Home">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/activity_home_recyclerview"
         android:layout_width="395dp"
         android:layout_height="571dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/recycler_view_backgroung"
         android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/home_bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_search_view"
         tools:listitem="@layout/item_news_data">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -28,13 +30,23 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:itemBackground="@color/design_default_color_on_primary"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@color/appBackground"
+        app:itemRippleColor="@color/gray"
+        app:itemTextColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_main_menu" />
+
+    <SearchView
+        android:id="@+id/home_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

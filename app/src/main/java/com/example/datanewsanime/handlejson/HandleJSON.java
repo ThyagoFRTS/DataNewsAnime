@@ -1,5 +1,6 @@
 package com.example.datanewsanime.handlejson;
 
+import com.example.datanewsanime.models.MalFullData;
 import com.example.datanewsanime.models.MalInfoAnime;
 import com.example.datanewsanime.models.MalNews;
 import com.example.datanewsanime.models.MalNextSeason;
@@ -44,6 +45,8 @@ public class HandleJSON {
             return null;
         }
     }
+
+
 
     public static MalNews getMalNews(String content){
         try {
@@ -119,5 +122,98 @@ public class HandleJSON {
             return null;
         }
     }
+
+    public static MalFullData getMalFullData(String content){
+        try {
+            JSONArray ja;
+            JSONArray jaNames;
+            JSONObject jo;
+            JSONObject joNames;
+            MalFullData mfd = new MalFullData();
+            List<String> names;
+
+            jo = new JSONObject(content);
+
+
+            mfd.setMalId(jo.getString("mal_id"));
+            mfd.setImageUrl(jo.getString("image_url"));
+            mfd.setTitle(jo.getString("title"));
+            mfd.setAiring(Boolean.parseBoolean(jo.getString("airing")));
+            mfd.setType(jo.getString("type"));
+            mfd.setSynopsis(jo.getString("synopsis"));
+            mfd.setEpisodes(jo.getString("episodes"));
+            mfd.setScore(jo.getString("score"));
+            mfd.setStartDate(jo.getString("start_date"));
+            mfd.setEndDate(jo.getString("end_date"));
+
+            mfd.setMembers(jo.getString("members"));
+            mfd.setSource(jo.getString("source"));
+
+            jaNames = jo.getJSONArray("genres");
+            names = new ArrayList<>();
+            for (int j = 0; j < jaNames.length(); j++){
+                joNames = jaNames.getJSONObject(j);
+                names.add(joNames.getString("name"));
+            }
+            mfd.setGenres(names);
+
+            jaNames = jo.getJSONArray("producers");
+            names = new ArrayList<>();
+            for (int j = 0; j < jaNames.length(); j++){
+                joNames = jaNames.getJSONObject(j);
+                names.add(joNames.getString("name"));
+            }
+            mfd.setProducers(names);
+
+            jaNames = jo.getJSONArray("opening_themes");
+            names = new ArrayList<>();
+            for (int j = 0; j < jaNames.length(); j++){
+                joNames = jaNames.getJSONObject(j);
+                names.add(joNames.getString(Integer.toString(j)));
+            }
+            mfd.setOpening_themes(names);
+
+            jaNames = jo.getJSONArray("endning_themes");
+            names = new ArrayList<>();
+            for (int j = 0; j < jaNames.length(); j++){
+                joNames = jaNames.getJSONObject(j);
+                names.add(joNames.getString(Integer.toString(j)));
+            }
+            mfd.setEnding_themes(names);
+
+            jaNames = jo.getJSONArray("studios");
+            names = new ArrayList<>();
+            for (int j = 0; j < jaNames.length(); j++){
+                joNames = jaNames.getJSONObject(j);
+                names.add(joNames.getString("name"));
+            }
+            mfd.setEnding_themes(names);
+
+            return mfd;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String getMalIdFromTitle(String content){
+        try {
+            JSONArray ja;
+            JSONObject jo;
+            MalInfoAnime iam = new MalInfoAnime();
+
+            jo = new JSONObject(content);
+            ja = jo.getJSONArray("results");
+            jo = ja.getJSONObject(0);
+
+
+
+            return jo.getString("mal_id");
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
 }
