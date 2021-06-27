@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SearchView;
 
 
@@ -65,6 +66,13 @@ public class Home extends AppCompatActivity {
             }
             return false;
         });
+
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -80,7 +88,8 @@ public class Home extends AppCompatActivity {
                 return false;
             }
         });
-        
+
+
 
 
     }
