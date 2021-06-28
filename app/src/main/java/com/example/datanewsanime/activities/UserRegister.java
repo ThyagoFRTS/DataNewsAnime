@@ -1,9 +1,11 @@
 package com.example.datanewsanime.activities;
 
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +15,10 @@ import com.example.datanewsanime.R;
 import com.example.datanewsanime.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
 
 
 public class UserRegister extends AppCompatActivity {
@@ -61,6 +67,7 @@ public class UserRegister extends AppCompatActivity {
                 });
     }
 
+
     private boolean getData() {
         if(email.getText().toString().equals("") || confPass.getText().toString().equals("")
                 || pass.getText().toString().equals("") || userName.getText().toString().equals("")){
@@ -72,6 +79,10 @@ public class UserRegister extends AppCompatActivity {
                 return false;
             }else{
                 user = new User(userName.getText().toString(),email.getText().toString(),pass.getText().toString());
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date date = new Date();
+                user.setType("User");
+                user.setDate_create_account(formatter.format(date));
                 return true;
             }
         }else {

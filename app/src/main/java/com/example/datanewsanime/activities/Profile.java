@@ -47,6 +47,8 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         TextView userName = findViewById(R.id.profile_username);
         TextView userEmail = findViewById(R.id.profile_email_user);
+        TextView type = findViewById(R.id.profile_type);
+        TextView date = findViewById(R.id.profile_data);
         Button btn_logout = findViewById(R.id.profile_button_logout);
         imageView = findViewById(R.id.profile_image_perfil);
         BottomNavigationView bottomNavigationView = findViewById(R.id.profile_bottom_navigation);
@@ -78,6 +80,18 @@ public class Profile extends AppCompatActivity {
                         name = Objects.requireNonNull(snapshot.child("email").getValue()).toString();
                     }
                     userEmail.setText(String.format("User Email: %s", name));
+
+                    name = "";
+                    if (snapshot.child("date_create_account").getValue() != null){
+                        name = Objects.requireNonNull(snapshot.child("date_create_account").getValue()).toString();
+                    }
+                    date.setText(String.format("Account created on: %s", name));
+
+                    name = "";
+                    if (snapshot.child("type").getValue() != null){
+                        name = Objects.requireNonNull(snapshot.child("type").getValue()).toString();
+                    }
+                    type.setText(String.format("Class: %s", name));
 
                     if ( snapshot.child("url_img_profile").getValue() != "" && snapshot.child("url_img_profile").getValue() != null) {
                         name = Objects.requireNonNull(snapshot.child("url_img_profile").getValue()).toString();

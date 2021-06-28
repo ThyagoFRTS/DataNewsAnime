@@ -77,7 +77,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/edit_text_background"
                 android:orientation="vertical"
@@ -101,102 +101,111 @@
                     android:id="@+id/content_data_synopes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_source"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_members"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_geners"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_producers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:textColor="@color/gray"
                     android:visibility="gone"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_airing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_episodes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_malId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_start_data"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/content_data_end_data"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
+                    android:padding="8dp"
                     android:textColor="@color/gray"
-                    tools:text="TextView"
-                    android:layout_marginStart="8dp" />
+                    tools:text="TextView" />
 
 
             </LinearLayout>
@@ -204,6 +213,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
+
+
                 android:background="@drawable/recycler_view_backgroung"
                 android:padding="20dp"
                 tools:layout_editor_absoluteX="7dp"

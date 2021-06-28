@@ -9,6 +9,8 @@ public class User {
     private String url_img_profile;
     private String email;
     private String pass;
+    private String date_create_account;
+    private String type;
 
     public User(String userName, String email, String pass) {
         this.id = "";
@@ -56,6 +58,22 @@ public class User {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getDate_create_account() {
+        return date_create_account;
+    }
+
+    public void setDate_create_account(String date_create_account) {
+        this.date_create_account = date_create_account;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void saveData() {
