@@ -4,6 +4,7 @@ package com.example.datanewsanime.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -22,13 +23,13 @@ import java.util.Date;
 
 
 public class UserRegister extends AppCompatActivity {
-    private Button btn_register;
     private EditText userName;
     private EditText email;
     private EditText pass;
     private EditText confPass;
     private User user;
     private FirebaseAuth userAuth;
+    Button btn_register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +80,7 @@ public class UserRegister extends AppCompatActivity {
                 return false;
             }else{
                 user = new User(userName.getText().toString(),email.getText().toString(),pass.getText().toString());
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date();
                 user.setType("User");
                 user.setDate_create_account(formatter.format(date));

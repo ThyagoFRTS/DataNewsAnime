@@ -39,7 +39,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
+
 
 
 import org.jetbrains.annotations.NotNull;
@@ -76,7 +76,7 @@ public class Profile extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseStorage mStorage = FirebaseStorage.getInstance();
         storageRef = mStorage.getReference();
-        Toast.makeText(getApplicationContext(),storageRef.toString(),Toast.LENGTH_LONG).show();
+
 
 
 
@@ -115,19 +115,9 @@ public class Profile extends AppCompatActivity {
                         name = Objects.requireNonNull(snapshot.child("type").getValue()).toString();
                     }
                     type.setText(String.format("Class: %s", name));
-                    /*
-                    user = FirebaseAuth.getInstance().getCurrentUser();
-                    if(user!=null){
-                        StorageReference photo = storageRef.child(user.getUid()+".jpg");
-                        final long MEGABYTE = 1024 * 1024;
-                        photo.getBytes(MEGABYTE).addOnSuccessListener(bytes -> {
-                            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-                            imageView.setImageBitmap(bitmap);
-                        });
 
-                    }*/
                     if (snapshot.child("url_img_profile").getValue() != null) {
-                        name = Objects.requireNonNull(snapshot.child("url_img_profile").getValue()).toString();
+
                         user = FirebaseAuth.getInstance().getCurrentUser();
                         if(user!=null){
                             StorageReference photo = storageRef.child(user.getUid()+".jpg");
