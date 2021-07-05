@@ -84,14 +84,9 @@ public class NewsContentFragment extends Fragment {
             TextView news_content_start_data = getActivity().findViewById(R.id.content_data_start_data);
             TextView news_content_end_data = getActivity().findViewById(R.id.content_data_end_data);
             TextView news_content_malId = getActivity().findViewById(R.id.content_data_malId);
-            RatingBar score = getActivity().findViewById(R.id.score);
 
-            if (mia.getScore().equals("0")){
-                score.setVisibility(RatingBar.GONE);
-            }else{
-                score.setRating(Float.parseFloat(mia.getScore()));
 
-            }
+
             news_content_malId.setText(String.format("Mal id: %s", mia.getMalId()));
             news_content_airing.setText(String.format("Airing: %s", (mia.isAiring())));
             news_content_episodes.setText(String.format("Episodes: %s", mia.getEpisodes()));
