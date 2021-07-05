@@ -20,6 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:padding="8dp"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -167,7 +168,14 @@
 
 
             </LinearLayout>
-
+            <Button
+                android:id="@+id/search_results_btn_back"
+                android:layout_width="196dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:background="@drawable/button_background"
+                android:text="@string/back"/>
         </LinearLayout>
 
 

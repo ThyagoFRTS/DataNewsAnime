@@ -79,7 +79,7 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(Home.this, SearchResults.class);
                 intent.putExtra("query_anime_tilte",query);
                 startActivity(intent);
-                finish();
+                //finish();
                 return false;
             }
 

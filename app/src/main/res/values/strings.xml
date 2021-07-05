@@ -32,4 +32,5 @@
     <string name="app_label">DataNewsAnime</string>
     <string name="search_hint">Search Animes Here</string>
     <string name="Search">Search</string>
+    <string name="back">Back</string>
 </resources>
